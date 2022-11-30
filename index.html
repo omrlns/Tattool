@@ -2,45 +2,694 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tat2finder</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/corpo.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <title>Tat2finder</title>
 </head>
 
 <body>
-    <div id="styleDiv">
-        <select name="style" id="selectStyle">
-            <option value="oriental" id="orientalId">Oriental</option>
-            <option value="realismo" id="realismoId">Realismo</option>
-            <option value="animeHq" id="AnimeId">Anime/HQ</option>
-            <option value="aquarela" id="aquarelaId">Aquarela</option>
-            <option value="biomecanico" id="biomecanicoId">Biomecânico</option>
-            <option value="comercial" id="comercialId">Comercial</option>
-            <option value="sacra" id="sacraId">Sacra</option>
-        </select>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 card-margem">
+        <div class="card busca">
+          <div class="card-body p-0">
+            <form id="busca">
+              <div class="row">
+                <div class="col-12">
+                  <div class="row no-gutters">
+                    <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                      <select class="form-control" id="exampleFormControlSelect1">
+                        <!--seletor de estilos-->
+                        <option>Escolha o Estilo</option>
+                        <option>Oriental</option>
+                        <option>Realismo e Portrait</option>
+                        <option>Cartoon</option>
+                        <option>Anime</option>
+                        <option>Pontilismo e Geométrico</option>
+                        <option>Arte Sacra</option>
+                        <option>Lettering</option>
+                        <option>Aquarela</option>
+                        <option>Traços Finos</option>
+                        <option>Old School</option>
+                        <option>New School</option>
+                        <option>Neo tradicional</option>
+                        <option>Tribal</option>
+                        <option>Maori</option>
+                        <option>Biomecânico</option>
+                        <option>Blackwork</option>
+                        <option>Preto e Cinza</option>
+                        <option>Minimalista</option>
+                        <option>3D</option>
+                        <option>Abstrata</option>
+                        <option>Glitch</option>
+                        <option>Mandalas</option>
+                        <option>Cobertura</option>
+                      </select>
+                    </div>
+                    <!--barra de busca-->
+                    <div class="col-lg-8 col-md-6 col-sm-12 p-0">
+                      <input type="text" placeholder="Localização..." class="form-control" id="search" name="search" />
+                    </div>
+                    <div class="col-lg-1 col-md-3 col-sm-12 p-0">
+                      <button type="submit" class="btn btn-base">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                          class="feather feather-search">
+                          <circle cx="11" cy="11" r="8"></circle>
+                          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div id="valueDiv">
-        <select name="value" id="valueId">
-            <option value="v50_150" id="id50_150">R$50 ~ R$100</option>
-            <option value="v150_300" id="id150_300">R$150 ~ R$300</option>
-            <option value="v300_500" id="id300_500">R$300 ~ R$500</option>
-            <option value="v500+" id="id500">R$500+</option>
-        </select>
+    <!--Visualização da busca -->
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card card-margem">
+          <div class="card-body">
+            <div class="row busca-corpo">
+              <div class="col-lg-12">
+                <div class="busca-resultado">
+                  <div class="busca-header">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="records">
+                          Resultados: <b>1-10</b> de <b>200</b> estudios
+                        </div>
+                      </div>
+
+                      <!-- seletor de ordem -->
+
+                      <div class="col-lg-6">
+                        <div class="result-actions">
+                          <div class="result-sorting">
+                            <span>Ordenar por:</span>
+                            <select class="form-control border-0" id="exampleOption">
+                              <option value="1">Mais Relevante</option>
+                              <option value="2">Nomes (A-Z)</option>
+                              <option value="3">Nomes (Z-A)</option>
+                              <option value="4">Avaliações</option>
+                            </select>
+                          </div>
+                          <div class="result-views">
+                            <button type="button" class="btn btn-soft-base btn-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-list">
+                                <line x1="8" y1="6" x2="21" y2="6"></line>
+                                <line x1="8" y1="12" x2="21" y2="12"></line>
+                                <line x1="8" y1="18" x2="21" y2="18"></line>
+                                <line x1="3" y1="6" x2="3" y2="6"></line>
+                                <line x1="3" y1="12" x2="3" y2="12"></line>
+                                <line x1="3" y1="18" x2="3" y2="18"></line>
+                              </svg>
+                            </button>
+                            <button type="button" class="btn btn-soft-base btn-icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="feather feather-grid">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- campo postagens ainda a verificar função -->
+                  <div class="result-body">
+                    <div class="table-responsive">
+                      <table class="table objetos">
+                        <tbody>
+                          <tr>
+                            <td>
+                              <div class="imagemCircular">
+                                <img
+                                  src="https://lh3.googleusercontent.com/p/AF1QipPZJ5-qttztEYPnbFgU5kRDDiUKcAiPTZ3JcZhT=w600-h0"
+                                  alt="Company" />
+                              </div>
+                            </td>
+                            <td>
+                              <div class="estudio-titulo">
+                                <a href="#">Studio Máximo Tattoo</a>
+                                <p class="m-0">
+                                  <a href="#" class="tatuador">Luciano</a>
+                                  <span class="postagens">1 dias sem postar</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="especializado">
+                                <p class="type m-0">13:30 até 20:00</p>
+                                <p class="text-muted m-0">
+                                  em <span class="local">São José - SC</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="valor-hora">R$ 50/hr</div>
+                            </td>
+                            <td>
+                              <div class="categoria bg-soft-base">
+                                <i class="indicador bg-base"></i>
+                                <span>Colorido</span>
+                              </div>
+                            </td>
+                            <!--ESTRELAS-->
+                            <td>
+                              <div class="estrelas">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                  stroke-linejoin="round" class="feather feather-star">
+                                  <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                  </polygon>
+                                </svg>
+
+
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                  stroke-linejoin="round" class="feather feather-star">
+                                  <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                  </polygon>
+                                </svg>
+
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="imagemCircular">
+                                <img
+                                  src="https://teiotattoo.com.br/wp-content/uploads/sb-instagram-feed-images/290120008_761799604829984_8252237786512743451_n.webpfull.jpg"
+                                  alt="Company" />
+                              </div>
+                            </td>
+
+                            <td>
+                              <div class="estudio-titulo">
+                                <a href="#">Téio Tattoo</a>
+                                <p class="m-0">
+                                  <a href="#" class="tatuador">Marcelo Neyssinger (Téio)</a>
+                                  <span class="postagens">2 dias sem postar</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="especializado">
+                                <p class="type m-0">Atendimento</p>
+                                <p class="text-muted m-0">
+                                  em
+                                  <span class="local">São José - SC</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="valor-hora">R$ 60/hr</div>
+                            </td>
+                            <td>
+                              <div class="categoria bg-soft-warning">
+                                <i class="indicador bg-warning"></i>
+                                <span>New School</span>
+                              </div>
+                            </td>
+
+                            <!--ESTRELAS-->
+                            <td>
+                              <div class="estrelas">
+                                <a href="#">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-star">
+                                    <polygon
+                                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                    </polygon>
+                                  </svg>
+                                </a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="imagemCircular">
+                                <img
+                                  src="https://static.wixstatic.com/media/8b6f88_3fdffadc492848ec950e3f715dc083ca~mv2.png/v1/fill/w_84,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/S%C3%ADmbolo_Fundo_Preto_1.png"
+                                  alt="Company" />
+                              </div>
+                            </td>
+
+                            <td>
+                              <div class="estudio-titulo">
+                                <a href="#">Black Ink Tattoo Studio</a>
+                                <p class="m-0">
+                                  <a href="#" class="tatuador">Jean Back</a>
+                                  <span class="postagens">4 dias sem postar</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="especializado">
+                                <p class="type m-0">Atendimento</p>
+                                <p class="text-muted m-0">
+                                  em
+                                  <span class="local">Florianópolis - SC</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="valor-hora">R$ 60/hr</div>
+                            </td>
+                            <td>
+                              <div class="categoria bg-soft-success">
+                                <i class="indicador bg-success"></i>
+                                <span>Preto e Branco</span>
+                              </div>
+                            </td>
+
+                            <!--ESTRELAS-->
+                            <td>
+                              <div class="estrelas">
+                                <a href="#">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-star">
+                                    <polygon
+                                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                    </polygon>
+                                  </svg>
+                                </a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="imagemCircular">
+                                <img src="https://www.milkink.com.br/view/dist/imgs/logotype-inverse.png"
+                                  alt="Company" />
+                              </div>
+                            </td>
+                            <td>
+                              <div class="estudio-titulo">
+                                <a href="#">Milk Ink</a>
+                                <p class="m-0">
+                                  <a href="#" class="tatuador">LUCAS MILK</a>
+                                  <span class="postagens">5 dias sem postar</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="especializado">
+                                <p class="type m-0">Atendimento</p>
+                                <p class="text-muted m-0">
+                                  em
+                                  <span class="local">Florianópolis - SC</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="valor-hora">R$ 35/hr</div>
+                            </td>
+                            <td>
+                              <div class="categoria bg-soft-danger">
+                                <i class="indicador bg-danger"></i>
+                                <span>Oriental</span>
+                              </div>
+                            </td>
+
+                            <!--ESTRELAS-->
+                            <td>
+                              <div class="estrelas">
+                                <a href="#">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-star">
+                                    <polygon
+                                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                    </polygon>
+                                  </svg>
+                                </a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="imagemCircular">
+                                <img
+                                  src="https://sixxhome.com.br/wp-content/uploads/2021/05/logo-sixx-tattoo-300x110.png"
+                                  alt="Company" />
+                              </div>
+                            </td>
+                            <td>
+                              <div class="estudio-titulo">
+                                <a href="#">Sixx Home</a>
+                                <p class="m-0">
+                                  <a href="#" class="tatuador">Doug</a>
+                                  <span class="postagens">6 dias sem postar</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="especializado">
+                                <p class="type m-0">Atendimento</p>
+                                <p class="text-muted m-0">
+                                  em <span class="local">São José - SC</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="valor-hora">R$ 70/hr</div>
+                            </td>
+                            <td>
+                              <div class="categoria bg-soft-info">
+                                <i class="indicador bg-info"></i>
+                                <span>Pontilismo</span>
+                              </div>
+                            </td>
+
+                            <!--ESTRELAS-->
+                            <td>
+                              <div class="estrelas">
+                                <a href="#">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-star starred">
+                                    <polygon
+                                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                    </polygon>
+                                  </svg>
+                                </a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="imagemCircular">
+                                <img
+                                  src="https://www.cristianotattooestudio.com.br/loja/wp-content/uploads/2022/01/cristiano-tattoo-547x720.jpg"
+                                  alt="Company" />
+                              </div>
+                            </td>
+                            <td>
+                              <div class="estudio-titulo">
+                                <a href="#">Cristiano Tattoo & Love Piercing</a>
+                                <p class="m-0">
+                                  <a href="#" class="tatuador">Cristiano</a>
+                                  <span class="postagens">1 dias sem postar</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="especializado">
+                                <p class="type m-0">Atendimento</p>
+                                <p class="text-muted m-0">
+                                  em <span class="local">São José - SC</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="valor-hora">R$ 50/hr</div>
+                            </td>
+                            <td>
+                              <div class="categoria bg-soft-base">
+                                <i class="indicador bg-base"></i>
+                                <span>Colorido</span>
+                              </div>
+                            </td>
+
+                            <!--ESTRELAS-->
+                            <td>
+                              <div class="estrelas">
+                                <a href="#">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-star">
+                                    <polygon
+                                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                    </polygon>
+                                  </svg>
+                                </a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="imagemCircular">
+                                <img src="https://veranitattoosc.com.br/wp-content/uploads/2022/03/VERANI.jpg"
+                                  alt="Company" />
+                              </div>
+                            </td>
+                            <td>
+                              <div class="estudio-titulo">
+                                <a href="#">VERANI TATTOO</a>
+                                <p class="m-0">
+                                  <a href="#" class="tatuador">Verani Fontana</a>
+                                  <span class="postagens">2 dias sem postar</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="especializado">
+                                <p class="type m-0">Atendimento</p>
+                                <p class="text-muted m-0">
+                                  em
+                                  <span class="local">São José - SC</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="valor-hora">R$ 60/hr</div>
+                            </td>
+                            <td>
+                              <div class="categoria bg-soft-warning">
+                                <i class="indicador bg-warning"></i>
+                                <span>New School</span>
+                              </div>
+                            </td>
+
+                            <!--ESTRELAS-->
+                            <td>
+                              <div class="estrelas">
+                                <a href="#">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-star">
+                                    <polygon
+                                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                    </polygon>
+                                  </svg>
+                                </a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="imagemCircular">
+                                <img
+                                  src="https://static.wixstatic.com/media/a7e792_8b3b5a233a9f40119fa2f879ebb88394~mv2.jpeg/v1/fill/w_872,h_900,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/a7e792_8b3b5a233a9f40119fa2f879ebb88394~mv2.jpeg"
+                                  alt="Company" />
+                              </div>
+                            </td>
+                            <td>
+                              <div class="estudio-titulo">
+                                <a href="#">Mardi Tattoo</a>
+                                <p class="m-0">
+                                  <a href="#" class="tatuador">Mardi</a>
+                                  <span class="postagens">4 dias sem postar</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="especializado">
+                                <p class="type m-0">Atendimento</p>
+                                <p class="text-muted m-0">
+                                  em
+                                  <span class="local">São José - SC</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="valor-hora">R$ 60/hr</div>
+                            </td>
+                            <td>
+                              <div class="categoria bg-soft-success">
+                                <i class="indicador bg-success"></i>
+                                <span>Minimalista</span>
+                              </div>
+                            </td>
+
+                            <!--ESTRELAS-->
+                            <td>
+                              <div class="estrelas">
+                                <a href="#">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-star">
+                                    <polygon
+                                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                    </polygon>
+                                  </svg>
+                                </a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="imagemCircular">
+                                <img
+                                  src="https://static.wixstatic.com/media/35629a_1e0d4debad3d4844a4ff7f90d229b27b~mv2.png/v1/fill/w_440,h_440,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Logo_edited.png"
+                                  alt="Company" />
+                              </div>
+                            </td>
+                            <td>
+                              <div class="estudio-titulo">
+                                <a href="#">New World Tattoo</a>
+                                <p class="m-0">
+                                  <a href="#" class="tatuador">Pedro Maziero</a>
+                                  <span class="postagens">5 dias sem postar</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="especializado">
+                                <p class="type m-0">Atendimento</p>
+                                <p class="text-muted m-0">
+                                  em
+                                  <span class="local">Florianópolis - SC</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="valor-hora">R$ 35/hr</div>
+                            </td>
+                            <td>
+                              <div class="categoria bg-soft-danger">
+                                <i class="indicador bg-danger"></i>
+                                <span>Oriental</span>
+                              </div>
+                            </td>
+
+                            <!--ESTRELAS-->
+                            <td>
+                              <div class="estrelas">
+                                <a href="#">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-star">
+                                    <polygon
+                                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                    </polygon>
+                                  </svg>
+                                </a>
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div class="imagemCircular">
+                                <img src="https://unnastudio.com/wp-content/uploads/2021/05/UNNA-Studio.png"
+                                  alt="Company" />
+                              </div>
+                            </td>
+                            <td>
+                              <div class="estudio-titulo">
+                                <a href="#">Unna Studio</a>
+                                <p class="m-0">
+                                  <a href="#" class="tatuador">Rian Fernandes</a>
+                                  <span class="postagens">6 dias sem postar</span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="especializado">
+                                <p class="type m-0">Atendimento</p>
+                                <p class="text-muted m-0">
+                                  em <span class="local">Florianópolis - SC </span>
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <div class="valor-hora">R$ 70/hr</div>
+                            </td>
+                            <td>
+                              <div class="categoria bg-soft-info">
+                                <i class="indicador bg-info"></i>
+                                <span>Pontilismo</span>
+                              </div>
+                            </td>
+
+                            <!--ESTRELAS-->
+                            <td>
+                              <div class="estrelas">
+                                <a href="#">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="feather feather-star starred">
+                                    <polygon
+                                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                                    </polygon>
+                                  </svg>
+                                </a>
+                              </div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <nav class="d-flex justify-content-center">
+              <ul class="pagination pagination-base pagination-boxed pagination-square mb-0">
+                <li class="page-item">
+                  <a class="page-link no-border" href="#">
+                    <span aria-hidden="true">«</span>
+                    <span class="sr-only">Anterior</span>
+                  </a>
+                </li>
+                <li class="page-item active">
+                  <a class="page-link no-border" href="#">1</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link no-border" href="#">2</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link no-border" href="#">3</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link no-border" href="#">4</a>
+                </li>
+                <li class="page-item">
+                  <a class="page-link no-border" href="#">
+                    <span aria-hidden="true">»</span>
+                    <span class="sr-only">Próxima</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div id="divDistance">
-        <select name="distance" id="distanceId">
-            <option value="5km" id="5kmId">Até 5Km</option>
-            <option value="10km" id="10kmId">Até 10Km</option>
-            <option value="15km" id="15kmId">Até 15Km</option>
-            <option value="30km+" id="30kmID">Mais de 30Km</option>
-        </select>
-    </div>
-
-
-
+  </div>
 </body>
 
 </html>

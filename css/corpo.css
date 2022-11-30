@@ -1,0 +1,270 @@
+body {
+  background: #000000;
+  margin-top: 20px;
+}
+
+.objetos {
+  color: #4699aa;
+  font-weight: 400;
+}
+
+.objetos tr:first-child td {
+  border: 0;
+}
+
+.objetos .imagemCircular img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.objetos .estudio-titulo {
+  min-width: 200px;
+}
+
+.objetos .estudio-titulo a {
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #3c4142;
+  line-height: 1.5;
+}
+
+.objetos .estudio-titulo a:hover {
+  color: #68cbd7;
+  text-decoration: none;
+}
+
+.objetos .estudio-titulo .tatuador {
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #3c4142;
+  font-size: 0.8125rem;
+  color: #3c4142;
+}
+
+.objetos .estudio-titulo .tatuador:hover {
+  color: #68cbd7;
+  text-decoration: none;
+}
+
+.objetos .estudio-titulo .time {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.objetos .especializado {
+  min-width: 100px;
+  font-weight: 400;
+}
+
+.objetos .especializado p {
+  line-height: 1.5;
+  color: #3c4142;
+  font-size: 0.8125rem;
+}
+
+.objetos .especializado .location {
+  color: #3c4142;
+}
+
+.objetos .valor-hora {
+  min-width: 70px;
+  font-weight: 400;
+  color: #3c4142;
+  font-size: 0.8125rem;
+}
+
+.objetos .categoria {
+  padding: 0.5rem;
+  display: inline-flex;
+  white-space: nowrap;
+  border-radius: 15px;
+}
+
+.objetos .categoria .indicador {
+  width: 13px;
+  height: 13px;
+  margin-right: 0.5rem;
+  float: left;
+  border-radius: 50%;
+}
+
+.objetos .categoria span {
+  font-size: 0.8125rem;
+  color: #3c4142;
+  font-weight: 600;
+}
+
+.objetos .estrelas svg {
+  width: 20px;
+  height: 20px;
+  color: #fd8b2c;
+}
+
+.objetos .estrelas svg.starred {
+  fill: #fd8b2c;
+}
+.bg-soft-base {
+  background-color: #e1f5f7;
+}
+.bg-soft-warning {
+  background-color: #fff4e1;
+}
+.bg-soft-success {
+  background-color: #d1f6f2;
+}
+.bg-soft-danger {
+  background-color: #fedce0;
+}
+.bg-soft-info {
+  background-color: #d7efff;
+}
+
+.busca {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.busca input {
+  height: 100%;
+  background: transparent;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  height: 100%;
+  font-size: 1rem;
+}
+
+.busca select {
+  background: transparent;
+  border: 0;
+  padding: 1rem;
+  height: 100%;
+  font-size: 1rem;
+}
+
+.busca select:focus {
+  border: 0;
+}
+
+.busca button {
+  height: 100%;
+  width: 100%;
+  font-size: 1rem;
+}
+
+.busca button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.busca-corpo {
+  margin-bottom: 1.5rem;
+}
+
+.busca-corpo .busca-filtros .lista-filtros {
+  margin-bottom: 1.3rem;
+}
+
+.busca-corpo .busca-filtros .lista-filtros .titulo {
+  color: #3c4142;
+  margin-bottom: 1rem;
+}
+
+.busca-corpo .busca-filtros .lista-filtros .filter-text {
+  color: #727686;
+}
+
+.busca-corpo .busca-resultado .busca-header {
+  margin-bottom: 2rem;
+}
+
+.busca-corpo .busca-resultado .busca-header .records {
+  color: #3c4142;
+}
+
+.busca-corpo .busca-resultado .busca-header .result-actions {
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.busca-corpo .busca-resultado .busca-header .result-actions .result-sorting {
+  display: flex;
+  align-items: center;
+}
+
+.busca-corpo
+  .busca-resultado
+  .busca-header
+  .result-actions
+  .result-sorting
+  span {
+  flex-shrink: 0;
+  font-size: 0.8125rem;
+}
+
+.busca-corpo
+  .busca-resultado
+  .busca-header
+  .result-actions
+  .result-sorting
+  select {
+  color: #68cbd7;
+}
+
+.busca-corpo
+  .busca-resultado
+  .busca-header
+  .result-actions
+  .result-sorting
+  select
+  option {
+  color: #3c4142;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .busca-corpo .busca-filtros {
+    display: flex;
+  }
+  .busca-corpo .busca-filtros .lista-filtros {
+    margin-right: 1rem;
+  }
+}
+
+.card-margin {
+  margin-bottom: 1.875rem;
+}
+
+@media (min-width: 992px) {
+  .col-lg-2 {
+    flex: 0 0 16.66667%;
+    max-width: 16.66667%;
+  }
+}
+
+.card-margin {
+  margin-bottom: 1.875rem;
+}
+.card {
+  border: 0;
+  box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+  -ms-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #ffffff;
+  background-clip: border-box;
+  border: 1px solid #e6e4e9;
+  border-radius: 8px;
+}
